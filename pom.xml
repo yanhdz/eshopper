@@ -7,12 +7,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>entity</module>
-        <module>business</module>
-        <module>persistence</module>
         <module>services</module>
-    <module>frontend</module>
-  </modules>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+        <module>frontend</module>
+        <module>persistence/persistence</module>
+        <module>negocios</module>
+    </modules>
+    
 </project>
