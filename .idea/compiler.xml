@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="business" />
+        <module name="frontend" />
+        <module name="services" />
+        <module name="persistence" />
+        <module name="entity" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="business" target="1.8" />
+      <module name="entity" target="1.8" />
+      <module name="eshopper" target="1.5" />
+      <module name="frontend" target="1.7" />
+      <module name="persistence" target="1.8" />
+      <module name="services" target="1.7" />
+      <module name="web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="frontend" options="-endorseddirs $PROJECT_DIR$/frontend/target/endorsed" />
+      <module name="services" options="-endorseddirs $PROJECT_DIR$/services/target/endorsed" />
+      <module name="web" options="-endorseddirs $PROJECT_DIR$/web/target/endorsed" />
+    </option>
+  </component>
+</project>

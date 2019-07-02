@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="com.mosis.entity" epkg="entity" v="5.2" rws="_156061883866350" Pws="_156061883866350" cws="_156061883866350" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_156061883836430" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="AreaPK" abs="false" class="Area" v="true" jbn="false" xre="false" m="false" rootElement="_156061883836430" id="_156061883836631">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="area" id="_156061883837536">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="area" unique="false" nullable="true" insertable="true" updatable="true" table="area" length="100"/>
+            </jpa:basic>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_156061883836732" connected-attribute-id="_156061883837944" v="true" xvt="" name="ctoServicioCollection" id="_156061883837637">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Integer" v="true" xvt="" name="idArea" id="_156061883837435">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="id_area" unique="false" nullable="false" insertable="true" updatable="true" table="area"/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="area"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CtoServicioPK" abs="false" class="CtoServicio" v="true" jbn="false" xre="false" m="false" rootElement="_156061883836430" id="_156061883836732">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="clave" id="_156061883837739">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="clave" unique="false" nullable="false" insertable="true" updatable="true" table="cto_servicio" length="245"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="servicio" id="_156061883837840">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="servicio" unique="false" nullable="false" insertable="true" updatable="true" table="cto_servicio" length="145"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" xvt="" name="idCtoZona" id="_156061883837841">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="id_cto_zona" unique="false" nullable="true" insertable="true" updatable="true" table="cto_servicio"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="timeZone" id="_156061883837842">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="time_zone" unique="false" nullable="true" insertable="true" updatable="true" table="cto_servicio" length="200"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156061883836833" v="true" xvt="" name="puestoes" id="_156061907140166">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156166165044512" v="true" name="zonas" id="_156166191488117"/>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_156061883836834" connected-attribute-id="_156061883837949" v="true" xvt="" name="departamentoCollection" id="_156061883837843">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-table name="cto_servicio_departamento">
+                    <jpa:join-column name="CTOSERVICIO_ID_CTO_SERVICIO" rc="ID_CTO_SERVICIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="DEPARTAMENTOES_ID_DEPARTAMENTO" rc="ID_DEPARTAMENTO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many collection-type="java.util.List" connected-entity-id="_156061883836631" connected-attribute-id="_156061883837637" v="true" xvt="" name="areaCollection" id="_156061883837944">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-table name="cto_servicio_area">
+                    <jpa:join-column name="CTOSERVICIO_ID_CTO_SERVICIO" rc="ID_CTO_SERVICIO" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="AREAS_ID_AREA" rc="ID_AREA" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Integer" v="true" xvt="" name="idCtoServicio" id="_156061883837738">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="id_cto_servicio" unique="false" nullable="false" insertable="true" updatable="true" table="cto_servicio"/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="cto_servicio">
+            <jpa:unique-constraint>
+                <jpa:column-name>servicio</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PuestoPK" abs="false" class="Puesto" v="true" jbn="false" xre="false" m="false" rootElement="_156061883836430" id="_156061883836833">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="puesto" id="_156061883837946">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="puesto" unique="false" nullable="true" insertable="true" updatable="true" table="puesto" length="200"/>
+            </jpa:basic>
+            <jpa:id attribute-type="Integer" v="true" xvt="" name="idPuesto" id="_156061883837945">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="id_puesto" unique="false" nullable="false" insertable="true" updatable="true" table="puesto"/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="puesto"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="DepartamentoPK" abs="false" class="Departamento" v="true" jbn="false" xre="false" m="false" rootElement="_156061883836430" id="_156061883836834">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="departamento" id="_156061883837948">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="departamento" unique="false" nullable="true" insertable="true" updatable="true" table="departamento" length="100"/>
+            </jpa:basic>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_156061883836732" connected-attribute-id="_156061883837843" v="true" xvt="" name="ctoServicioCollection" id="_156061883837949">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Integer" v="true" xvt="" name="idDepartamento" id="_156061883837947">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="id_departamento" unique="false" nullable="false" insertable="true" updatable="true" table="departamento"/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="departamento"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ZonaPK" abs="false" class="Zona" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_156061883836430" id="_156166165044512">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="zona" pname="attribute" id="_156166190483215"/>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="idZona" pname="id" id="_156166165047513">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Zona.findAll">
+            <jpa:query>Select e from Zona e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Zona.findByZona">
+            <jpa:query>Select z from Zona z where z.zona=:zona</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c/>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_156061883866350">
+            <i ref="_156061883836732" x="255" y="20"/>
+            <i ref="_156166165044512" x="32" y="63"/>
+            <i ref="_156061883836833" x="540" y="46"/>
+            <i ref="_156061883836834" x="32" y="297"/>
+            <i ref="_156061883836631" x="523" y="297"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

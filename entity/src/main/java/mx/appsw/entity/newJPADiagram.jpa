@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="5.2" rws="_15603163979002" cws="_15603163979002" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15603163978991" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="ArtsPK" abs="false" class="Arts" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_15603164190213">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>modelos</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="descripcion" pname="attribute2" id="_15603164553228">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="numart" pname="attribute" id="_15603164531906">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="precio" pname="attribute1" id="_15603164542107">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_156031758902655" v="true" name="departamento" id="_156031786883879"/>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id_art" pname="id" id="_15603164190834">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Arts.findAll">
+            <jpa:query>Select e from Arts e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Arts.findByNumart">
+            <jpa:query>Select d from Arts d where d.numart=:numart</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Arts.findByPrecio">
+            <jpa:query>Select d from Arts d where d.precio=:precio</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Arts.findByDescripcion">
+            <jpa:query>Select d from Arts d where d.descripcion=:descripcion</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyType="D" compositePrimaryKeyClass="MovimPK" abs="false" class="Movim" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_15603165004309">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>arts</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:one-to-one own="true" primaryKey="true" connected-entity-id="_15603164190213" v="true" name="arts" id="_156031794674683"/>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id_movim" pname="id" id="_156031650043210">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Movim.findAll">
+            <jpa:query>Select e from Movim e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyType="D" compositePrimaryKeyClass="DocumPK" abs="false" class="Docum" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031653795912">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>movims</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:one-to-one own="true" primaryKey="true" connected-entity-id="_15603165004309" v="true" name="movim" id="_156031797387685"/>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id_docum" pname="id" id="_156031653796113">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Docum.findAll">
+            <jpa:query>Select e from Docum e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CategoriasPK" abs="false" class="Categorias" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031746946546">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031746946647">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Categorias.findAll">
+            <jpa:query>Select e from Categorias e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="MarcaPK" abs="false" class="Marca" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031753251349">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031753251550">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Marca.findAll">
+            <jpa:query>Select e from Marca e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ModelosPK" abs="false" class="Modelos" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031753988352">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031753988553">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Modelos.findAll">
+            <jpa:query>Select e from Modelos e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="DepartamentoPK" abs="false" class="Departamento" pclass="Entity_2" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031758902655">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031758902856">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Departamento.findAll">
+            <jpa:query>Select e from Departamento e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031766551758">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156031768032161" v="true" name="rols" id="_156031773226765"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_156031780147671" v="true" name="cart" id="_156031781690975"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031766551959">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Usuario.findAll">
+            <jpa:query>Select e from Usuario e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="RolPK" abs="false" class="Rol" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031768032161">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156031775441566" v="true" name="permisoses" id="_156031776625070"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031768032262">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Rol.findAll">
+            <jpa:query>Select e from Rol e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="PermisosPK" abs="false" class="Permisos" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031775441566">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031775441867">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Permisos.findAll">
+            <jpa:query>Select e from Permisos e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CartPK" abs="false" class="Cart" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15603163978991" id="_156031780147671">
+        <jpa:ath>deathkryz</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_15603164190213" v="true" name="artses" id="_156031784063877"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156031780147872">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Cart.findAll">
+            <jpa:query>Select e from Cart e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c/>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15603163979002">
+            <i ref="_15603165004309" x="14" y="170"/>
+            <i ref="_156031780147671" x="513" y="364"/>
+            <i ref="_156031768032161" x="327" y="416"/>
+            <i ref="_156031758902655" x="336" y="295"/>
+            <i ref="_156031753251349" x="336" y="158"/>
+            <i ref="_15603164190213" x="13" y="295"/>
+            <i ref="_156031746946546" x="407" y="29"/>
+            <i ref="_156031766551758" x="492" y="504"/>
+            <i ref="_156031753988352" x="336" y="229"/>
+            <i ref="_156031775441566" x="138" y="504"/>
+            <i ref="_156031653795912" x="14" y="12"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
