@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/eshopper?zeroDateTimeBehavior=convertToNull
+        </property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <property name="c3p0.autoCommitOnClose">true</property>
+        <property name="connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="c3p0.acquire_increment">1</property>
+        <property name="c3p0.initialPoolSize">5</property>
+        <property name="c3p0.idle_test_period">100</property>
+        <property name="c3p0.max_size">5</property>
+        <property name="c3p0.max_statements">0</property>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.timeout">70000</property>
+        <property name="c3p0.validate">false</property>
+        <property name="c3p0.maxIdleTimeExcessConnections">20</property>
+
+        <property name="hibernate.connection.isolation">2</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        
+        <mapping class="mx.appsw.entity.Usuario"/>
+        <mapping class="mx.appsw.entity.Principal"/>
+        <mapping class="mx.appsw.entity.Permission"/>
+    </session-factory>
+</hibernate-configuration>

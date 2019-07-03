@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+    </h:head>
+
+    <h:body>
+        <p:panelGrid columns="2">
+            <p:spinner />
+            <p:commandButton value="Push me!"/>
+            <p:commandButton value="Guest"/>
+            <p:commandButton value="Admin" rendered="#{facesContext.externalContext.isUserInRole('ADMIN')}"/>
+            <p:commandButton value="Agregar"/>
+        </p:panelGrid>
+
+        <p:dataTable id="tablaUsuarios" paginator="true" paginatorPosition="bottom"
+                     var="user" reflow="true" rows="5"
+                     paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                     rowsPerPageTemplate="5,10,15"
+                     style="margin-bottom:40px"
+                     value="#{usuarioUI.helper.usuarioList}"
+                     emptyMessage="Ningún dato disponible en esta tabla">
+            
+            <p:column headerText="Usuario">
+                <h:outputText value="#{user.email}"/>
+            </p:column>
+            <p:column headerText="Editar">
+                 <p:commandButton value="Editar"/>
+            </p:column>
+            <p:column headerText="Eliminar">
+                 <p:commandButton value="Eliminar"/>
+            </p:column>
+        </p:dataTable>
+
+    </h:body>
+</html>

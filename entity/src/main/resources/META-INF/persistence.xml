@@ -6,6 +6,9 @@
     <class>com.mosis.entity.entity.CtoServicio</class>
     <class>com.mosis.entity.entity.Puesto</class>
     <class>com.mosis.entity.entity.Departamento</class>
+    <class>mx.appsw.entity.Usuario</class>
+    <class>mx.appsw.entity.Principal</class>
+    <class>mx.appsw.entity.Permission</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
       <property name="javax.persistence.jdbc.password" value="app"/>

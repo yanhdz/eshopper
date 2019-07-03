@@ -12,5 +12,11 @@
         <module>persistence/persistence</module>
         <module>negocios</module>
     </modules>
-    
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="5.2" rws="_156208714801231" Pws="_156208714801231" cws="_156208714801231" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_156208714801130" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
-    <jpa:entity compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_156208714801130" id="_156208716801632">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="mx.appsw.entity" epkg="domain" v="5.2" rws="_156208714801231" Pws="_156208714801231" cws="_156208714801231" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_156208714801130" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" v="true" jbn="false" xre="false" m="false" rootElement="_156208714801130" id="_156208716801632">
         <jpa:ath>kitto</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="password" pname="attribute" id="_156208767685755"/>
-            <jpa:basic attribute-type="String" v="true" name="name" pname="attribute" id="_156208768349556"/>
-            <jpa:basic attribute-type="String" v="true" name="email" pname="attribute" id="_156208768553957"/>
-            <jpa:basic attribute-type="String" v="true" name="activo" pname="attribute" id="_156208768981358"/>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_156208716941035" v="true" name="principal" id="_156208722855242"/>
-            <jpa:id attribute-type="Long" v="true" xvt="" name="id_usuario" pname="id" id="_156208716803433">
+            <jpa:basic attribute-type="String" v="true" xvt="" name="password" id="_156208767685755">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_156208768349556">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="email" id="_156208768553957">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="activo" id="_156208768981358">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_156208716941035" v="true" xvt="" name="principal" id="_156208722855242">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id_usuario" id="_156208716803433">
                 <jpa:xwm/>
                 <jpa:xm/>
                 <jpa:generated-value strategy="DEFAULT"/>
@@ -30,13 +45,22 @@
             <jpa:query>Select u from Usuario u where u.activo=:activo</jpa:query>
         </jpa:nq>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="PrincipalPK" abs="false" class="Principal" pclass="Entity_2" v="true" xre="false" m="false" rootElement="_156208714801130" id="_156208716941035">
+    <jpa:entity compositePrimaryKeyClass="PrincipalPK" abs="false" class="Principal" v="true" jbn="false" xre="false" m="false" rootElement="_156208714801130" id="_156208716941035">
         <jpa:ath>kitto</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" name="rol" pname="attribute" id="_156208756433654"/>
-            <jpa:basic attribute-type="String" v="true" name="activo" pname="attribute" id="_156208783479559"/>
-            <jpa:one-to-many own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156208717112038" v="true" name="permissions" pname="permissions" id="_156208723430744"/>
-            <jpa:id attribute-type="Long" v="true" xvt="" name="id_principal" pname="id" id="_156208716941136">
+            <jpa:basic attribute-type="String" v="true" xvt="" name="rol" id="_156208756433654">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="activo" id="_156208783479559">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156208717112038" v="true" xvt="" name="permissions" id="_156208723430744">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id_principal" id="_156208716941136">
                 <jpa:xwm/>
                 <jpa:xm/>
                 <jpa:generated-value strategy="DEFAULT"/>
@@ -52,30 +76,30 @@
             <jpa:query>Select p from Principal p where p.activo=:activo</jpa:query>
         </jpa:nq>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="PermissionPK" abs="false" class="Permission" pclass="Entity_3" v="true" xre="false" m="false" rootElement="_156208714801130" id="_156208717112038">
+    <jpa:entity compositePrimaryKeyClass="PermissionPK" abs="false" class="Permission" v="true" jbn="false" xre="false" m="false" rootElement="_156208714801130" id="_156208717112038">
         <jpa:ath>kitto</jpa:ath>
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" xvt="" name="permiso" pname="attribute" id="_156208754312353">
+            <jpa:basic attribute-type="String" v="true" xvt="" name="permiso" id="_156208754312353">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" xvt="" name="read" pname="attribute" id="_156208750850550">
+            <jpa:basic attribute-type="boolean" v="true" xvt="" name="ver" id="_156208750850550">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" xvt="" name="add" pname="attribute" id="_156208752456952">
+            <jpa:basic attribute-type="boolean" v="true" xvt="" name="agregar" id="_156208752456952">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" xvt="" name="edit" pname="attribute" id="_156208751204351">
+            <jpa:basic attribute-type="boolean" v="true" xvt="" name="editar" id="_156208751204351">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:basic attribute-type="boolean" v="true" xvt="" name="erase" pname="attribute" id="_156208746737349">
+            <jpa:basic attribute-type="boolean" v="true" xvt="" name="borrar" id="_156208746737349">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:id attribute-type="Long" v="true" xvt="" name="id_permission" pname="id" id="_156208717112139">
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id_permission" id="_156208717112139">
                 <jpa:xwm/>
                 <jpa:xm/>
                 <jpa:generated-value strategy="DEFAULT"/>
@@ -84,17 +108,17 @@
         <jpa:nq e="false" name="Permission.findAll">
             <jpa:query>Select e from Permission e</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Permission.findByErase">
-            <jpa:query>Select p from Permission p where p.erase=:erase</jpa:query>
+        <jpa:nq e="false" name="Permission.findByBorrar">
+            <jpa:query>Select p from Permission p where p.borrar=:borrar</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Permission.findByRead">
-            <jpa:query>Select p from Permission p where p.read=:read</jpa:query>
+        <jpa:nq e="false" name="Permission.findByVer">
+            <jpa:query>Select p from Permission p where p.ver=:ver</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Permission.findByEdit">
-            <jpa:query>Select p from Permission p where p.edit=:edit</jpa:query>
+        <jpa:nq e="false" name="Permission.findByEditar">
+            <jpa:query>Select p from Permission p where p.editar=:editar</jpa:query>
         </jpa:nq>
-        <jpa:nq e="false" name="Permission.findByAdd">
-            <jpa:query>Select p from Permission p where p.add=:add</jpa:query>
+        <jpa:nq e="false" name="Permission.findByAgregar">
+            <jpa:query>Select p from Permission p where p.agregar=:agregar</jpa:query>
         </jpa:nq>
         <jpa:nq e="false" name="Permission.findByPermiso">
             <jpa:query>Select p from Permission p where p.permiso=:permiso</jpa:query>
